@@ -68,18 +68,18 @@ class AboutActivity : BaseSimpleActivity() {
         setupToolbar(about_toolbar, NavigationIcon.Arrow)
 
         setupFAQ()
-        setupEmail()
+//        setupEmail()
         setupRateUs()
         setupInvite()
         setupContributors()
         setupDonate()
-        setupFacebook()
-        setupReddit()
-        setupTelegram()
-        setupGetSimplePhone()
-        setupMoreApps()
-        setupWebsite()
-        setupPrivacyPolicy()
+//        setupFacebook()
+//        setupReddit()
+//        setupTelegram()
+//        setupGetSimplePhone()
+//        setupMoreApps()
+//        setupWebsite()
+//        setupPrivacyPolicy()
         setupLicense()
         setupVersion()
     }
@@ -97,60 +97,60 @@ class AboutActivity : BaseSimpleActivity() {
         }
     }
 
-    private fun setupEmail() {
-        if (about_faq_holder.isGone()) {
-            about_email_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-        }
-
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            about_email_holder.beGone()
-
-            if (about_faq_holder.isGone()) {
-                about_support.beGone()
-                about_support_holder.beGone()
-            } else {
-                about_faq_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-            }
-        }
-
-        about_email_holder.setOnClickListener {
-            val msg = "${getString(R.string.before_asking_question_read_faq)}\n\n${getString(R.string.make_sure_latest)}"
-            if (intent.getBooleanExtra(SHOW_FAQ_BEFORE_MAIL, false) && !baseConfig.wasBeforeAskingShown) {
-                baseConfig.wasBeforeAskingShown = true
-                ConfirmationAdvancedDialog(this, msg, 0, R.string.read_faq, R.string.skip) { success ->
-                    if (success) {
-                        about_faq_holder.performClick()
-                    } else {
-                        about_email_holder.performClick()
-                    }
-                }
-            } else {
-                val appVersion = String.format(getString(R.string.app_version, intent.getStringExtra(APP_VERSION_NAME)))
-                val deviceOS = String.format(getString(R.string.device_os), Build.VERSION.RELEASE)
-                val newline = "\n"
-                val separator = "------------------------------"
-                val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
-
-                val address = getString(R.string.my_email)
-                val selectorIntent = Intent(ACTION_SENDTO)
-                    .setData("mailto:$address".toUri())
-                val emailIntent = Intent(ACTION_SEND).apply {
-                    putExtra(EXTRA_EMAIL, arrayOf(address))
-                    putExtra(EXTRA_SUBJECT, appName)
-                    putExtra(EXTRA_TEXT, body)
-                    selector = selectorIntent
-                }
-
-                try {
-                    startActivity(emailIntent)
-                } catch (e: ActivityNotFoundException) {
-                    toast(R.string.no_email_client_found)
-                } catch (e: Exception) {
-                    showErrorToast(e)
-                }
-            }
-        }
-    }
+//    private fun setupEmail() {
+//        if (about_faq_holder.isGone()) {
+//            about_email_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+//        }
+//
+//        if (resources.getBoolean(R.bool.hide_all_external_links)) {
+//            about_email_holder.beGone()
+//
+//            if (about_faq_holder.isGone()) {
+//                about_support.beGone()
+//                about_support_holder.beGone()
+//            } else {
+//                about_faq_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+//            }
+//        }
+//
+//        about_email_holder.setOnClickListener {
+//            val msg = "${getString(R.string.before_asking_question_read_faq)}\n\n${getString(R.string.make_sure_latest)}"
+//            if (intent.getBooleanExtra(SHOW_FAQ_BEFORE_MAIL, false) && !baseConfig.wasBeforeAskingShown) {
+//                baseConfig.wasBeforeAskingShown = true
+//                ConfirmationAdvancedDialog(this, msg, 0, R.string.read_faq, R.string.skip) { success ->
+//                    if (success) {
+//                        about_faq_holder.performClick()
+//                    } else {
+//                        about_email_holder.performClick()
+//                    }
+//                }
+//            } else {
+//                val appVersion = String.format(getString(R.string.app_version, intent.getStringExtra(APP_VERSION_NAME)))
+//                val deviceOS = String.format(getString(R.string.device_os), Build.VERSION.RELEASE)
+//                val newline = "\n"
+//                val separator = "------------------------------"
+//                val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
+//
+//                val address = getString(R.string.my_email)
+//                val selectorIntent = Intent(ACTION_SENDTO)
+//                    .setData("mailto:$address".toUri())
+//                val emailIntent = Intent(ACTION_SEND).apply {
+//                    putExtra(EXTRA_EMAIL, arrayOf(address))
+//                    putExtra(EXTRA_SUBJECT, appName)
+//                    putExtra(EXTRA_TEXT, body)
+//                    selector = selectorIntent
+//                }
+//
+//                try {
+//                    startActivity(emailIntent)
+//                } catch (e: ActivityNotFoundException) {
+//                    toast(R.string.no_email_client_found)
+//                } catch (e: Exception) {
+//                    showErrorToast(e)
+//                }
+//            }
+//        }
+//    }
 
     private fun setupRateUs() {
         if (resources.getBoolean(R.bool.hide_google_relations)) {
