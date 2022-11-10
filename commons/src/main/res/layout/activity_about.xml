@@ -253,6 +253,7 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <!--
             <TextView
                 android:id="@+id/about_social"
                 android:layout_width="match_parent"
@@ -360,7 +361,7 @@
 
                 </RelativeLayout>
             </LinearLayout>
-
+            -->
             <TextView
                 android:id="@+id/about_other"
                 android:layout_width="match_parent"

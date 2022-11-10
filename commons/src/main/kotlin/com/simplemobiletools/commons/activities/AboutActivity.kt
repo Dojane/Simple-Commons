@@ -53,13 +53,13 @@ class AboutActivity : BaseSimpleActivity() {
             it.applyColorFilter(textColor)
         }
 
-        arrayOf(about_support, about_help_us, about_social, about_other).forEach {
-            it.setTextColor(primaryColor)
-        }
+//        arrayOf(about_support, about_help_us, about_social, about_other).forEach {
+//            it.setTextColor(primaryColor)
+//        }
 
-        arrayOf(about_support_holder, about_help_us_holder, about_social_holder, about_other_holder).forEach {
-            it.background.applyColorFilter(backgroundColor.getContrastColor())
-        }
+//        arrayOf(about_support_holder, about_help_us_holder, about_social_holder, about_other_holder).forEach {
+//            it.background.applyColorFilter(backgroundColor.getContrastColor())
+//        }
     }
 
     override fun onResume() {
@@ -228,33 +228,33 @@ class AboutActivity : BaseSimpleActivity() {
     }
 
     private fun setupFacebook() {
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            about_social.beGone()
-            about_social_holder.beGone()
-        }
-
-        about_facebook_holder.setOnClickListener {
-            var link = "https://www.facebook.com/simplemobiletools"
-            try {
-                packageManager.getPackageInfo("com.facebook.katana", 0)
-                link = "fb://page/150270895341774"
-            } catch (ignored: Exception) {
-            }
-
-            launchViewIntent(link)
-        }
+//        if (resources.getBoolean(R.bool.hide_all_external_links)) {
+//            about_social.beGone()
+//            about_social_holder.beGone()
+//        }
+//
+//        about_facebook_holder.setOnClickListener {
+//            var link = "https://www.facebook.com/simplemobiletools"
+//            try {
+//                packageManager.getPackageInfo("com.facebook.katana", 0)
+//                link = "fb://page/150270895341774"
+//            } catch (ignored: Exception) {
+//            }
+//
+//            launchViewIntent(link)
+//        }
     }
 
     private fun setupReddit() {
-        about_reddit_holder.setOnClickListener {
-            launchViewIntent("https://www.reddit.com/r/SimpleMobileTools")
-        }
+//        about_reddit_holder.setOnClickListener {
+//            launchViewIntent("https://www.reddit.com/r/SimpleMobileTools")
+//        }
     }
 
     private fun setupTelegram() {
-        about_telegram_holder.setOnClickListener {
-            launchViewIntent("https://t.me/SimpleMobileTools")
-        }
+//        about_telegram_holder.setOnClickListener {
+//            launchViewIntent("https://t.me/SimpleMobileTools")
+//        }
     }
 
     private fun setupGetSimplePhone() {
