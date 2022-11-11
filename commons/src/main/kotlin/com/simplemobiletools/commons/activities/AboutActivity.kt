@@ -39,27 +39,31 @@ class AboutActivity : BaseSimpleActivity() {
         arrayOf(
             about_faq_icon,
             about_rate_us_icon,
-            about_donate_icon,
+//            about_donate_icon,
             about_invite_icon,
-            about_contributors_icon,
-            about_get_simple_phone_icon,
-            about_more_apps_icon,
-            about_email_icon,
+//            about_contributors_icon,
+//            about_get_simple_phone_icon,
+//            about_more_apps_icon,
+//            about_email_icon,
             about_privacy_policy_icon,
             about_licenses_icon,
-            about_website_icon,
+//            about_website_icon,
             about_version_icon
         ).forEach {
             it.applyColorFilter(textColor)
         }
 
-//        arrayOf(about_support, about_help_us, about_social, about_other).forEach {
-//            it.setTextColor(primaryColor)
-//        }
+        arrayOf(about_support, about_help_us,
+//            about_social,
+            about_other).forEach {
+            it.setTextColor(primaryColor)
+        }
 
-//        arrayOf(about_support_holder, about_help_us_holder, about_social_holder, about_other_holder).forEach {
-//            it.background.applyColorFilter(backgroundColor.getContrastColor())
-//        }
+        arrayOf(about_support_holder, about_help_us_holder,
+//            about_social_holder,
+            about_other_holder).forEach {
+            it.background.applyColorFilter(backgroundColor.getContrastColor())
+        }
     }
 
     override fun onResume() {
@@ -198,33 +202,33 @@ class AboutActivity : BaseSimpleActivity() {
     }
 
     private fun setupContributors() {
-        if (about_rate_us_holder.isGone() && about_invite_holder.isGone()) {
-            about_contributors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-        }
-
-        about_contributors_holder.setOnClickListener {
-            val intent = Intent(applicationContext, ContributorsActivity::class.java)
-            startActivity(intent)
-        }
+//        if (about_rate_us_holder.isGone() && about_invite_holder.isGone()) {
+//            about_contributors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+//        }
+//
+//        about_contributors_holder.setOnClickListener {
+//            val intent = Intent(applicationContext, ContributorsActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun setupDonate() {
-        if (resources.getBoolean(R.bool.show_donate_in_about) && !resources.getBoolean(R.bool.hide_all_external_links)) {
-            about_donate_holder.beVisible()
-
-            val contributorsBg = if (about_rate_us_holder.isGone() && about_invite_holder.isGone()) {
-                R.drawable.ripple_top_corners
-            } else {
-                R.drawable.ripple_background
-            }
-
-            about_contributors_holder.background = resources.getDrawable(contributorsBg, theme)
-            about_donate_holder.setOnClickListener {
-                launchViewIntent("https://simplemobiletools.com/donate")
-            }
-        } else {
-            about_donate_holder.beGone()
-        }
+//        if (resources.getBoolean(R.bool.show_donate_in_about) && !resources.getBoolean(R.bool.hide_all_external_links)) {
+//            about_donate_holder.beVisible()
+//
+//            val contributorsBg = if (about_rate_us_holder.isGone() && about_invite_holder.isGone()) {
+//                R.drawable.ripple_top_corners
+//            } else {
+//                R.drawable.ripple_background
+//            }
+//
+//            about_contributors_holder.background = resources.getDrawable(contributorsBg, theme)
+//            about_donate_holder.setOnClickListener {
+//                launchViewIntent("https://simplemobiletools.com/donate")
+//            }
+//        } else {
+//            about_donate_holder.beGone()
+//        }
     }
 
     private fun setupFacebook() {
@@ -258,38 +262,38 @@ class AboutActivity : BaseSimpleActivity() {
     }
 
     private fun setupGetSimplePhone() {
-        if (resources.getBoolean(R.bool.hide_all_external_links)) {
-            about_get_simple_phone_holder.beGone()
-        }
-
-        about_get_simple_phone_holder.setOnClickListener {
-            launchViewIntent("https://simplemobiletools.com/phone")
-        }
+//        if (resources.getBoolean(R.bool.hide_all_external_links)) {
+//            about_get_simple_phone_holder.beGone()
+//        }
+//
+//        about_get_simple_phone_holder.setOnClickListener {
+//            launchViewIntent("https://simplemobiletools.com/phone")
+//        }
     }
 
     private fun setupMoreApps() {
-        if (resources.getBoolean(R.bool.hide_google_relations)) {
-            about_more_apps_holder.beGone()
-        }
-
-        about_more_apps_holder.setOnClickListener {
-            launchMoreAppsFromUsIntent()
-        }
+//        if (resources.getBoolean(R.bool.hide_google_relations)) {
+//            about_more_apps_holder.beGone()
+//        }
+//
+//        about_more_apps_holder.setOnClickListener {
+//            launchMoreAppsFromUsIntent()
+//        }
     }
 
     private fun setupWebsite() {
-        if (resources.getBoolean(R.bool.show_donate_in_about) && !resources.getBoolean(R.bool.hide_all_external_links)) {
-            if (about_more_apps_holder.isGone() && about_get_simple_phone_holder.isGone()) {
-                about_website_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
-            }
-
-            about_website_holder.beVisible()
-            about_website_holder.setOnClickListener {
-                launchViewIntent("https://simplemobiletools.com/")
-            }
-        } else {
-            about_website_holder.beGone()
-        }
+//        if (resources.getBoolean(R.bool.show_donate_in_about) && !resources.getBoolean(R.bool.hide_all_external_links)) {
+//            if (about_more_apps_holder.isGone() && about_get_simple_phone_holder.isGone()) {
+//                about_website_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
+//            }
+//
+//            about_website_holder.beVisible()
+//            about_website_holder.setOnClickListener {
+//                launchViewIntent("https://simplemobiletools.com/")
+//            }
+//        } else {
+//            about_website_holder.beGone()
+//        }
     }
 
     private fun setupPrivacyPolicy() {
@@ -305,7 +309,7 @@ class AboutActivity : BaseSimpleActivity() {
     }
 
     private fun setupLicense() {
-        if (about_website_holder.isGone() && about_more_apps_holder.isGone() && about_privacy_policy_holder.isGone()) {
+        if (/*about_website_holder.isGone() && about_more_apps_holder.isGone() &&*/ about_privacy_policy_holder.isGone()) {
             about_licenses_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
         }
 

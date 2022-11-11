@@ -762,7 +762,7 @@
     <string name="privacy_policy">Privacy policy</string>
     <string name="version_placeholder">Verzió: %s</string>
     <string name="hello">Üdv :)</string>
-    <string name="about_footer">Szeretettel ❤️ készült Szlovákiában</string>
+    <string name="about_footer"></string>
     <string name="additional_info">Kiegészítő információ</string>
     <string name="app_version">Alkalmazás verzió: %s</string>
     <string name="device_os">Eszköz operációs rendszere: %s</string>
