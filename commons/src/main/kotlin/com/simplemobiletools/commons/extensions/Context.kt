@@ -443,7 +443,10 @@ fun Context.getUriMimeType(path: String, newUri: Uri): String {
     return mimeType
 }
 
-fun Context.isThankYouInstalled() = isPackageInstalled("com.simplemobiletools.thankyou")
+//注释收费函数
+//fun Context.isThankYouInstalled() = isPackageInstalled("com.simplemobiletools.thankyou")
+
+fun Context.isThankYouInstalled() = true
 
 fun Context.isOrWasThankYouInstalled(): Boolean {
     return when {
