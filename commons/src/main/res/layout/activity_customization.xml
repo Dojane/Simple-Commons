@@ -246,6 +246,7 @@
                     style="@style/ColoredButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/apply_to_all_apps" />
 
             </RelativeLayout>

@@ -469,6 +469,8 @@ class CustomizationActivity : BaseSimpleActivity() {
 
         handleAccentColorLayout()
         customization_navigation_bar_color_holder.setOnClickListener { pickNavigationBarColor() }
+
+
         apply_to_all.setOnClickListener {
             applyToAll()
         }
@@ -508,6 +510,7 @@ class CustomizationActivity : BaseSimpleActivity() {
         updateActionbarColor(color)
         updateApplyToAllColors(color)
     }
+
 
     private fun updateApplyToAllColors(newColor: Int) {
         if (newColor == baseConfig.primaryColor && !baseConfig.isUsingSystemTheme) {
@@ -632,6 +635,8 @@ class CustomizationActivity : BaseSimpleActivity() {
 
     private fun getUpdatedTheme() = if (curSelectedThemeId == THEME_SHARED) THEME_SHARED else getCurrentThemeId()
 
+
+    //修改所有的系列app的主题
     private fun applyToAll() {
         if (isThankYouInstalled()) {
             ConfirmationDialog(this, "", R.string.share_colors_success, R.string.ok, 0) {
