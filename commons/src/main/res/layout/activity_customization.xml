@@ -184,7 +184,7 @@
                 android:layout_below="@+id/customization_accent_color_holder"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="?attr/selectableItemBackground"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:padding="@dimen/activity_margin">
 
                 <com.simplemobiletools.commons.views.MyTextView
