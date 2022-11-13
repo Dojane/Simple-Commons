@@ -176,7 +176,7 @@
                     android:clickable="false" />
 
             </RelativeLayout>
-
+            <!--    icon颜色修改功能注释            -->
             <RelativeLayout
                 android:id="@+id/customization_app_icon_color_holder"
                 android:layout_width="match_parent"
@@ -184,6 +184,7 @@
                 android:layout_below="@+id/customization_accent_color_holder"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="?attr/selectableItemBackground"
+                android:visibility="invisible"
                 android:padding="@dimen/activity_margin">
 
                 <com.simplemobiletools.commons.views.MyTextView

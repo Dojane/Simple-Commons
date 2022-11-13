@@ -315,8 +315,8 @@ class CustomizationActivity : BaseSimpleActivity() {
     private fun getSystemThemeColors(): MyTheme {
         return MyTheme(
             "${getString(R.string.system_default)} (${getString(R.string.material_you)})",
-            R.color.theme_dark_text_color,
-            R.color.theme_dark_background_color,
+            R.color.theme_light_text_color,
+            R.color.theme_light_background_color,
             R.color.color_primary,
             R.color.color_primary
         )
